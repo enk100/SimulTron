@@ -1,0 +1,166 @@
+
+<html>
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-99d622a7-b09d-4ecb-b6de-0cda4c5d89cf@mhtml.blink" />
+
+<title>SimulTron: On-Device Simultaneous Speech to Speech Translation</title>
+  
+<style>
+     h1, h2, h3, p {padding: 0 8px;}
+     td, audio {max-width: 265px;}
+     audio {width: 265px; height: 50px;}
+     table {border-collapse: collapse;}
+     th {padding-bottom: 4px;}
+     tr.transcript > td {
+       font-style: italic;
+       font-size: 11pt;
+       color: #222;
+       padding: 2px 3px 15px;
+       vertical-align: top;
+     }
+    
+</style>
+
+
+  </head>
+
+  <body>
+    <div>
+
+      <h1>SimulTron: On-Device Simultaneous Speech to Speech Translation</h1>
+
+      <p><b>Abstract:</b>Simultaneous speech-to-speech translation (S2ST) holds the promise of breaking down communication barriers and enabling fluid conversations across languages. However, achieving accurate, real-time translation through mobile devices remains a major challenge. We introduce SimulTron, a novel S2ST architecture designed to tackle this task. SimulTron is a lightweight direct S2ST model that uses the strengths of the Translatotron framework while incorporating key modifications for streaming operation, and an adjustable fixed delay. Our experiments show that SimulTron surpasses Translatotron 2 in offline evaluations. Furthermore, real-time evaluations reveal that SimulTron improves upon the performance achieved by Translatotron 1. Additionally, SimulTron achieves superior BLEU scores and latency compared to previous real-time S2ST method on the MuST-C dataset. Significantly, we have successfully deployed SimulTron on a Pixel 7 Pro device, show its potential for simultaneous S2ST on-device.</p>
+
+      <a id="ConversationalSTE"><h2 >Real-Time SimulTron - (on Conversational dataset, Spanish-to-English)</h2></a>
+
+        <table id="conversational-table">
+      	      <colgroup><col>
+              </colgroup><thead>
+                <tr>
+                  <th colspan="1">Source (Spanish)</th><th colspan="1">Reference (English)</th><th colspan="1">Predicted (English)</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_online/1/src.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/1/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/1/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>ver toda la filmografía de Atsushi Matsuda.</td>
+                  <td>See the complete filmography of Atsushi Matsuda.</td>
+                  <td>See the complete filmography of Atsushi Matsuda.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_online/2/src.wav" type"audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/2/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/2/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Papá, mira, solo quiero saber de qué estás hablando.</td>
+                  <td>Dad look, I just want to know what you're talking about.</td>
+                  <td>Dad look, I just want to know what you're talking about.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_online/3/src.wav" type"audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/3/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/3/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Bueno, eso era solo para la práctica, así que nadie está fuera del juego.</td>
+                  <td>Well, that was just for practice, so nobody is out of the game.</td>
+                  <td>Well, that was just for practice, so nobody is out of the game.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_online/4/src.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/4/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/4/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Y la policía francesa es igual de mala, peor, creo.</td>
+                  <td>And the French Police are just as bad - worse, I think.</td>
+                  <td>And the French Police as just as bad - worse, I think.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_online/5/src.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/5/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_online/5/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Pero no hablaron acerca de su matrimonio o de su marido.</td>
+                  <td>But they did not talk about her marriage or her husband.</td>
+                  <td>But they did not talk about his marriage or her husband.</td>
+                </tr>
+              </tbody>
+
+        </table>
+
+      <a id="ConversationalSTE"><h2 >Offline SimulTron - (on Conversational dataset, Spanish-to-English)</h2></a>
+
+        <table id="conversational-table">
+      	      <colgroup><col>
+              </colgroup><thead>
+                <tr>
+                  <th colspan="1">Source (Spanish)</th><th colspan="1">Reference (English)</th><th colspan="1">Predicted (English)</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_offline/1/src.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/1/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/1/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>ver toda la filmografía de Atsushi Matsuda.</td>
+                  <td>See the complete filmography of Atsushi Matsuda.</td>
+                  <td>See the complete filmography of Atsushi Matsuda.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_offline/2/src.wav" type"audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/2/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/2/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Papá, mira, solo quiero saber de qué estás hablando.</td>
+                  <td>Dad look, I just want to know what you're talking about.</td>
+                  <td>Dad look, I just want to know what you're talking about.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_offline/3/src.wav" type"audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/3/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/3/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Bueno, eso era solo para la práctica, así que nadie está fuera del juego.</td>
+                  <td>Well, that was just for practice, so nobody is out of the game.</td>
+                  <td>Well, that was just for practice, so nobody is out of the game.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_offline/4/src.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/4/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/4/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>De todos modos, creo que son reales, y si lo son, son espectaculares.</td>
+                  <td>Anyway, I think they're real, and if they are, they are spectacular.</td>
+                  <td>Anyway, I think they're real, and if they are, they spectacular.</td>
+                </tr>
+                <tr class="audio">
+                  <td><audio controls=""><source src="examples/conv_offline/5/src.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/5/ref.wav" type="audio/wav"></td>
+                  <td><audio controls=""><source src="examples/conv_offline/5/pred.wav" type="audio/wav"></td>
+                </tr>
+                <tr class="transcript">
+                  <td>Sí, es un gran disco de baile, pero escucha este disco con cuidado.</td>
+                  <td>Yeah, it's a great dance record, but listen to this record carefully.</td>
+                  <td>Yeah, that's a big dance record, but listen to that record carefully.</td>
+                </tr>
+              </tbody>
+
+        </table>
+
+
+  
+</body></html>
